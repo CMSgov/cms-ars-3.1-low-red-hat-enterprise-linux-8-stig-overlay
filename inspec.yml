@@ -64,7 +64,7 @@ inputs:
 - name: days_of_inactivity
   description: SV-230373 - Number of days of inactivity.
   type: numeric
-  value: 60
+  value: 90
   profile: redhat-enterprise-linux-8-stig-baseline
 
 - name: unsuccessful_attempts
@@ -82,7 +82,7 @@ inputs:
 - name: lockout_time 
   description: SV-230336, SV-230337 - The time in seconds for how long an account will be locked out.
   type: numeric
-  value: 3600
+  value: 900
   profile: redhat-enterprise-linux-8-stig-baseline
   
 - name: system_inactivity_timeout
