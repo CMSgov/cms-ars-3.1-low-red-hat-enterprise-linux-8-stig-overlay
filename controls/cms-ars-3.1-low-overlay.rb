@@ -935,8 +935,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"deny\" option is not set to \"5\" or less (but not \"0\") on the
@@ -949,8 +949,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"deny\" option is not set to \"5\" or less (but not \"0\") on the
@@ -968,8 +968,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   \"/etc/pam.d/password-auth\" files to match the following lines:
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1027,8 +1027,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"fail_interval\" option is not set to \"7200\" or less (but not
@@ -1038,8 +1038,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"fail_interval\" option is not set to \"7200\" or less (but not
@@ -1048,14 +1048,14 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
     desc 'fix', "
       Configure the operating system to lock an account when five unsuccessful
-  logon attempts occur in 60 minutes.
+  logon attempts occur in 120 minutes.
 
       Add/Modify the appropriate sections of the \"/etc/pam.d/system-auth\" and
   \"/etc/pam.d/password-auth\" files to match the following lines:
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1096,15 +1096,15 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230336' do
-    title "RHEL 8 must automatically lock an account for 60 minutes when five unsuccessful logon attempts occur
+    title "RHEL 8 must automatically lock an account for 15 minutes when five unsuccessful logon attempts occur
   during a 120-minute time period."
     desc  'check', "
-      Check that the system locks an account for 60 minutes after five unsuccessful logon
+      Check that the system locks an account for 15 minutes after five unsuccessful logon
   attempts within a period of 120 minutes with
   the following commands:
 
       Note: If the System Administrator demonstrates the use of an approved
-  centralized account management method that locks an account for 60 minutes after five unsuccessful logon attempts within a period of 120 minutes, this requirement is
+  centralized account management method that locks an account for 15 minutes after five unsuccessful logon attempts within a period of 120 minutes, this requirement is
   not applicable.
 
       Note: This check applies to RHEL versions 8.0 and 8.1, if the system is
@@ -1113,34 +1113,34 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
-      If the \"unlock_time\" option is not set to \"3600\" on the \"preauth\" and
+      If the \"unlock_time\" option is not set to \"900\" on the \"preauth\" and
   \"authfail\" lines with the \"pam_faillock.so\" module, or is missing from
   these lines, this is a finding.
 
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
-      If the \"unlock_time\" option is not set to \"3600\" on the \"preauth\" and
+      If the \"unlock_time\" option is not set to \"900\" on the \"preauth\" and
   \"authfail\" lines with the \"pam_faillock.so\" module, or is missing from
   these lines, this is a finding.
     "
     desc 'fix', "
-      Configure the operating system to lock an account for 60 minutes when five unsuccessful logon attempts occur in 120 minutes.
+      Configure the operating system to lock an account for 15 minutes when five unsuccessful logon attempts occur in 120 minutes.
 
       Add/Modify the appropriate sections of the \"/etc/pam.d/system-auth\" and
   \"/etc/pam.d/password-auth\" files to match the following lines:
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1152,30 +1152,30 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230337' do
-    title "RHEL 8 must automatically lock an account for 60 minutes when five unsuccessful logon attempts occur
+    title "RHEL 8 must automatically lock an account for 15 minutes when five unsuccessful logon attempts occur
   during a 120-minute time period."
     desc  'check', "
       Note: This check applies to RHEL versions 8.2 or newer, if the system is
   RHEL version 8.0 or 8.1, this check is not applicable.
 
       Verify the \"/etc/security/faillock.conf\" file is configured to lock an
-  account for 60 minutes after five unsuccessful logon
+  account for 15 minutes after five unsuccessful logon
   attempts:
 
       $ sudo grep 'unlock_time =' /etc/security/faillock.conf
 
-      unlock_time = 3600
+      unlock_time = 900
 
-      If the \"unlock_time\" option is not set to \"3600\", is missing or commented
+      If the \"unlock_time\" option is not set to \"900\", is missing or commented
   out, this is a finding.
     "
     desc 'fix', "
-      Configure the operating system to lock an account for 60 minutes when five unsuccessful logon attempts occur in 120 minutes.
+      Configure the operating system to lock an account for 15 minutes when five unsuccessful logon attempts occur in 120 minutes.
 
       Add/Modify the \"/etc/security/faillock.conf\" file to match the following
   line:
 
-      unlock_time = 3600
+      unlock_time = 900
     "
   end
 
@@ -1195,8 +1195,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"dir\" option is not set to a non-default documented tally log
@@ -1206,8 +1206,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"dir\" option is not set to a non-default documented tally log
@@ -1225,8 +1225,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   in the contents being cleared in the event of a reboot.
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1253,8 +1253,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"silent\" option is missing from the \"preauth\" line with the
@@ -1263,8 +1263,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"silent\" option is missing from the \"preauth\" line with the
@@ -1278,8 +1278,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   \"/etc/pam.d/password-auth\" files to match the following lines:
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1309,8 +1309,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"audit\" option is missing from the \"preauth\" line with the
@@ -1319,8 +1319,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"audit\" option is missing from the \"preauth\" line with the
@@ -1334,8 +1334,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   \"/etc/pam.d/password-auth\" files to match the following lines:
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1347,7 +1347,7 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230344' do
-    title "RHEL 8 must include root when automatically locking an account for 60 minutes when five unsuccessful
+    title "RHEL 8 must include root when automatically locking an account for 15 minutes when five unsuccessful
   logon attempts occur during a 120-minute time period."
     desc  'check', "
       Check that the system includes the root account when locking an account
@@ -1363,8 +1363,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/password-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"even_deny_root\" option is missing from the \"preauth\" line with
@@ -1373,8 +1373,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
       $ sudo grep pam_faillock.so /etc/pam.d/system-auth
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       If the \"even_deny_root\" option is missing from the \"preauth\" line with
@@ -1388,8 +1388,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   \"/etc/pam.d/password-auth\" files to match the following lines:
 
       auth required pam_faillock.so preauth dir=/var/log/faillock silent audit
-  deny=5 even_deny_root fail_interval=7200 unlock_time=3600
-      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=3600
+  deny=5 even_deny_root fail_interval=7200 unlock_time=900
+      auth required pam_faillock.so authfail dir=/var/log/faillock unlock_time=900
       account required pam_faillock.so
 
       The \"sssd\" service must be restarted for the changes to take effect. To
@@ -1401,7 +1401,7 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230345' do
-    title "RHEL 8 must include root when automatically locking an account for 60 minutes when five unsuccessful
+    title "RHEL 8 must include root when automatically locking an account for 15 minutes when five unsuccessful
   logon attempts occur during a 120-minute time period."
     desc 'fix', "
       Configure the operating system to include root when locking an account
@@ -1584,37 +1584,37 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
   control 'SV-230373' do
     title "RHEL 8 account identifiers (individuals, groups, roles, and devices)
-  must be disabled after 60 days of inactivity."
+  must be disabled after 90 days of inactivity."
     desc  "Inactive identifiers pose a risk to systems and applications because
   attackers may exploit an inactive identifier and potentially obtain undetected
   access to the system. Owners of inactive accounts will not notice if
   unauthorized access to their user account has been obtained.
 
       RHEL 8 needs to track periods of inactivity and disable application
-  identifiers after 60 days of inactivity.
+  identifiers after 90 days of inactivity.
     "
     desc  'check', "
       Verify the account identifiers (individuals, groups, roles, and devices)
-  are disabled after 60 days of inactivity with the following command:
+  are disabled after 90 days of inactivity with the following command:
 
       Check the account inactivity value by performing the following command:
 
       $ sudo grep -i inactive /etc/default/useradd
 
-      INACTIVE=60
+      INACTIVE=90
 
-      If \"INACTIVE\" is set to \"-1\", a value greater than \"60\", or is
+      If \"INACTIVE\" is set to \"-1\", a value greater than \"90\", or is
   commented out, this is a finding.
     "
     desc 'fix', "
-      Configure RHEL 8 to disable account identifiers after 60 days of inactivity
+      Configure RHEL 8 to disable account identifiers after 90 days of inactivity
   after the password expiration.
 
       Run the following command to change the configuration for useradd:
 
-      $ sudo useradd -D -f 60
+      $ sudo useradd -D -f 90
 
-      CMS recommendation is 60 days, but a lower value is acceptable. The value
+      CMS recommendation is 90 days, but a lower value is acceptable. The value
   \"-1\" will disable this feature, and \"0\" will disable the account
   immediately after the password expires.
     "
