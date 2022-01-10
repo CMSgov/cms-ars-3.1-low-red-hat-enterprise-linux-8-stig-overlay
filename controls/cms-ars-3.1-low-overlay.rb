@@ -3,6 +3,8 @@
 include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
   control 'SV-230223' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
     desc  'check', "
       Verify the operating system implements CMS-approved encryption to protect
   the confidentiality of remote access sessions.
@@ -306,6 +308,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230228' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (1)) is not applied to this system categorization in CMS ARS 3.1'
    desc  "Remote access services, such as those providing remote access to
   network devices and information systems, which lack automated monitoring
   capabilities, increase risk and make remote user access management difficult at
@@ -326,6 +330,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230229' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-5 (2) (a)) is not applied to this system categorization in CMS ARS 3.1'
     desc  'check', "
       Verify RHEL 8 for PKI-based authentication has valid certificates by
   constructing a certification path (which includes status information) to an
@@ -351,6 +357,10 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
+  control 'SV-230230' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-5 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
 
   control 'SV-230231' do
     desc  "Passwords need to be protected at all times, and encryption is the
@@ -434,6 +444,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230243' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-4) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Preventing unauthorized information transfers mitigates the risk of
   information, including encrypted representations of information, produced by
   the actions of prior users/roles (or the actions of processes acting on behalf
@@ -453,8 +465,14 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
-
+  control 'SV-230244' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-10) is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
   control 'SV-230251' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Without cryptographic integrity protections, information can be
   altered by unauthorized users without detection.
 
@@ -482,7 +500,9 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230252' do
-    title "The RHEL 8 operating system must implement CMS-approved encryption to
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
+     title "The RHEL 8 operating system must implement CMS-approved encryption to
   protect the confidentiality of SSH server connections."
     desc  "Without cryptographic integrity protections, information can be
   altered by unauthorized users without detection.
@@ -514,6 +534,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230254' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
     title "The RHEL 8 operating system must implement CMS-approved encryption in
   the OpenSSL package."
     desc  "Without cryptographic integrity protections, information can be
@@ -539,6 +561,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230255' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
     title "The RHEL 8 operating system must implement CMS-approved TLS encryption
   in the OpenSSL package."
     desc  "Without cryptographic integrity protections, information can be
@@ -584,6 +608,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230256' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
     title "The RHEL 8 operating system must implement CMS-approved TLS encryption
   in the GnuTLS package."
     desc  'check', "
@@ -671,6 +697,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230269' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-4) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Preventing unauthorized information transfers mitigates the risk of
   information, including encrypted representations of information, produced by
   the actions of prior users/roles (or the actions of processes acting on behalf
@@ -696,6 +724,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230270' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-4) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Preventing unauthorized information transfers mitigates the risk of
   information, including encrypted representations of information, produced by
   the actions of prior users/roles (or the actions of processes acting on behalf
@@ -787,6 +817,10 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
+  control 'SV-230276' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SI-16) is not applied to this system categorization in CMS ARS 3.1'
+  end
 
   control "SV-230277" do
     impact 0.0
@@ -801,6 +835,11 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   control "SV-230279" do
     impact 0.0
     desc 'caveat', 'This is Not Applicable since the related security control (SC-3) is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control 'SV-230280' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SI-16) is not applied to this system categorization in CMS ARS 3.1'
   end
 
   control "SV-230281" do
@@ -855,8 +894,9 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
-
   control 'SV-230331' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-2 (2)) is not applied to this system categorization in CMS ARS 3.1'
     title "RHEL 8 temporary user accounts must be provisioned with an expiration
   time of 24 hours or less."
     desc  "If temporary user accounts remain active when no longer needed or for
@@ -1444,6 +1484,10 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
+  control 'SV-230355' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-5 (2) (c)) is not applied to this system categorization in CMS ARS 3.1'
+  end
 
   control "SV-230360" do
     impact 0.0
@@ -1622,6 +1666,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230374' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-2 (2)) is not applied to this system categorization in CMS ARS 3.1'
     title "RHEL 8 emergency accounts must be automatically removed or disabled
   after the crisis is resolved or within 24 hours."
     desc  'check', "
@@ -1733,6 +1779,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   end
 
   control 'SV-230484' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AU-8 (1) (a)) is not applied to this system categorization in CMS ARS 3.1'
     title "RHEL 8 must securely compare internal information system clocks at
   least every 24 hours with a server synchronized to an authoritative time
   source, such as the United States Naval Observatory (USNO) time servers, or a
@@ -1759,8 +1807,19 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
-
+  control 'SV-230502' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-3) is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
+  control 'SV-230503' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-3) is not applied to this system categorization in CMS ARS 3.1'
+  end
+  
   control 'SV-230504' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (1)) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Failure to restrict network connectivity only to authorized systems
   permits inbound connections from malicious systems. It also permits outbound
   connections that may facilitate exfiltration of CMS data.
@@ -1775,6 +1834,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230505' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (1)) is not applied to this system categorization in CMS ARS 3.1'
     desc  "\"Firewalld\" provides an easy and effective way to block/limit remote
   access to the system via ports, services, and protocols.
 
@@ -1798,7 +1859,9 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230506' do
-    desc  "Without protection of communications with wireless peripherals,
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-18 (1)) is not applied to this system categorization in CMS ARS 3.1'
+     desc  "Without protection of communications with wireless peripherals,
   confidentiality and integrity may be compromised because unprotected
   communications can be intercepted and either read, altered, or used to
   compromise the RHEL 8 operating system.
@@ -1830,6 +1893,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-230507' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-18 (1)) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Without protection of communications with wireless peripherals,
   confidentiality and integrity may be compromised because unprotected
   communications can be intercepted and either read, altered, or used to
@@ -1858,6 +1923,100 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     "
   end
 
+  control 'SV-230508' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230509' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230510' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230511' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230512' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230513' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230514' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230515' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230516' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230517' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230518' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230519' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230520' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230521' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230522' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230523' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230524' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-3) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230526' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-8) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-230527' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
 
   control 'SV-237640' do
     desc  "Unapproved mechanisms that are used for authentication to the
@@ -1873,6 +2032,11 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   access cryptographic modules utilize authentication that meets CMS
   requirements. 
     "
+  end
+
+  control 'SV-237642' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-6 (5)) is not applied to this system categorization in CMS ARS 3.1'
   end
 
 
@@ -1898,6 +2062,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-244525' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-10) is not applied to this system categorization in CMS ARS 3.1'
     desc  'check', "
       Verify all network connections associated with SSH traffic are
   automatically terminated at the end of the session or after 30 minutes of
@@ -1941,9 +2107,9 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
     end
   end
 
-
-
   control 'SV-244526' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (2)) is not applied to this system categorization in CMS ARS 3.1'
     desc  "Without cryptographic integrity protections, information can be
   altered by unauthorized users without detection.
 
@@ -1973,6 +2139,8 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
 
 
   control 'SV-244544' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (AC-17 (1)) is not applied to this system categorization in CMS ARS 3.1'
     desc  "\"Firewalld\" provides an easy and effective way to block/limit remote
   access to the system via ports, services, and protocols.
 
@@ -1991,6 +2159,36 @@ include_controls "redhat-enterprise-linux-8-stig-baseline" do
   a variety of information system components (e.g., servers, workstations,
   notebook computers, smartphones, and tablets).
     "
+  end
+
+    control 'SV-244545' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-244546' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (CM-7 (2)) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-244547' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-3) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-244548' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (IA-3) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-244549' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SC-8) is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'SV-245540' do
+    impact 0.0
+    desc 'caveat', 'This is Not Applicable since the related security control (SI-2 (2)) is not applied to this system categorization in CMS ARS 3.1'
   end
 
 end
